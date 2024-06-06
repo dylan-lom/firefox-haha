@@ -1,0 +1,31 @@
+{
+  "manifest_version": 2,
+  "name": "haha",
+  "version": "1.0",
+  "description": "hit-a-hit",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "firefox-haha@dlom.cc"
+    }
+  },
+
+  "permissions": [ "activeTab", "tabs" ],
+
+  "background": {
+    "scripts": [ "background.js" ]
+  },
+  "content_scripts": [
+    {
+      "matches": [ "<all_urls>" ],
+      "js": [ "content.js" ]
+    }
+  ],
+  "commands": {
+    "display-hints": {
+      "suggested_key": {
+        "default": "Ctrl+Alt+F"
+      },
+      "description": "Display hints"
+    }
+  }
+}
